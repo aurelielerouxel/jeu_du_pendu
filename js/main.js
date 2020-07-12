@@ -35,3 +35,14 @@ var hiddenWord = hiddenRandomWord(wordRandom)
 console.log(`Mot caché : ${hiddenWord}`);
 alert(`Mais quel est ce jeu ? \n${hiddenWord}`);
 console.log(hiddenWord);
+
+//Vérifier l'entrée de l'utilisateur
+function checkUserInput() {
+    let userChoice = prompt("Choisissez une lettre");
+    while (userChoice.length != 1 ) {
+        userChoice = prompt("Vous devez rentrer UNE lettre, svp.");
+    }
+    return userChoice;
+}
+var userChoice = checkUserInput();
+console.log(userChoice);
