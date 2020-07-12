@@ -2,7 +2,7 @@
 alert("Bienvenue sur le jeu du pendu spécial jeux vidéo");
 
 //Créer une liste de mots
-const wordList = ["minecraft", "tetris", "grand theft auto", "world of warcraft", " super mario bros",
+const wordList = ["minecraft", "tetris", "grand theft auto", "world of warcraft", "super mario bros",
                 "the legend of zelda", "mario kart", "pokemon", "red dead redemption", "diablo", "fallout"];
 console.log(wordList);
 
@@ -31,7 +31,7 @@ function hiddenRandomWord(wordRandom) {
     }
     return hiddenWord;
 }
-var hiddenWord = hiddenRandomWord(wordRandom)
+var hiddenWord = hiddenRandomWord(wordRandom);
 console.log(`Mot caché : ${hiddenWord}`);
 alert(`Mais quel est ce jeu ? \n${hiddenWord}`);
 console.log(hiddenWord);
@@ -46,3 +46,34 @@ function checkUserInput() {
 }
 var userChoice = checkUserInput();
 console.log(userChoice);
+
+// Vérifier que la lettre est présente dans le mot et la faire apparaître à la place d'un (des) underscore(s)
+let wordDisplay = ''; 
+for (const caracter of arrayForWord){
+    (userChoice.includes(caracter)) ? wordDisplay += caracter : wordDisplay += ' _ '; 
+}
+alert(wordDisplay);
+console.log(wordDisplay); 
+
+//Mise en place d'un système de points
+let score = 7;
+while (score > 0 && hiddenWord != wordRandom) {
+    if (userChoice === arrayForWord) {
+        let annonce = score + " tentative(s) restante(s)";
+        alert(annonce);
+    }
+    else if (userChoice != arrayForWord) {
+        let annonce = score + " tentative(s) restante(s)";
+        alert(annonce);
+        score --;
+    }
+    var userChoice = checkUserInput();
+}
+  
+//Vérifier que le joueur peut encore jouer
+if (score == 0) {
+    alert("GAME OVER");
+}
+else {
+    alert("Bravo, le no-life, tu as trouvé ! Oo");
+}
