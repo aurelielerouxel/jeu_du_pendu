@@ -13,3 +13,25 @@ function randomChoiceInArray() {
 }
 var wordRandom = randomChoiceInArray(wordRandom);
 console.log(wordRandom);
+
+//Convertir le mot aleatoire en tableau
+function splitWordInArray(wordRandom) {
+    let arrayForWord = wordRandom.split('');
+    return arrayForWord;    
+}
+var arrayForWord = splitWordInArray(wordRandom);
+console.log(arrayForWord);
+
+//Afficher le wordRandom sous forme underscore (function)
+function hiddenRandomWord(wordRandom) {
+    let hiddenWord = []
+    let wordLenght = wordRandom.length;
+    for(i=0; i<=wordLenght; i++) {
+    hiddenWord += ' _ ';
+    }
+    return hiddenWord;
+}
+var hiddenWord = hiddenRandomWord(wordRandom)
+console.log(`Mot caché : ${hiddenWord}`);
+alert(`Mais quel est ce jeu ? \n${hiddenWord}`);
+console.log(hiddenWord);
